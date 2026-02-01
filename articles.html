@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our complete collection of motivation, productivity, and personal development articles. Over 20+ articles to help you achieve success.">
+    <meta name="keywords" content="motivation articles, productivity tips, personal development, success strategies, life improvement">
+    <title>All Articles - Daily Inspiration Hub</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d5aa0;
+            --accent-color: #d69e2e;
+            --light-color: #f8fafc;
+            --dark-color: #2d3748;
+            --text-color: #4a5568;
+            --border-color: #e2e8f0;
+            --success-color: #38a169;
+            --card-bg: #ffffff;
+            --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 6px 20px rgba(0, 0, 0, 0.08);
+            --gradient-primary: linear-gradient(135deg, #1a365d 0%, #2d5aa0 100%);
+            --gradient-accent: linear-gradient(135deg, #d69e2e 0%, #b7791f 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            min-height: 100vh;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(45, 90, 160, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(214, 158, 46, 0.03) 0%, transparent 20%);
+            z-index: -1;
+        }
+        
+        /* Header */
+        header {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-tagline {
+            font-size: 0.85rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-top: 2px;
+        }
+        
+        /* Navigation */
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .main-nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .main-nav a:hover {
+            color: var(--primary-color);
+            background: rgba(45, 90, 160, 0.05);
+        }
+        
+        .main-nav a.active {
+            color: var(--primary-color);
+            background: rgba(45, 90, 160, 0.1);
+        }
+        
+        .main-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 3px;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        /* Articles Hero */
+        .articles-hero {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .articles-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0L0 0 0 20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .articles-hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .articles-hero p {
+            font-size: 1.3rem;
+            margin: 0 auto 2.5rem;
+            opacity: 0.95;
+            max-width: 700px;
+        }
+        
+        /* Main Content Layout */
+        .articles-main {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 2.5rem;
+            margin: 3rem 0;
+            align-items: start;
+        }
+        
+        /* Category Filter */
+        .category-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-color);
+        }
+        
+        .category-btn {
+            padding: 10px 24px;
+            background: var(--light-color);
+            border: 2px solid var(--border-color);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            color: var(--text-color);
+        }
+        
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--gradient-accent);
+            color: white;
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(214, 158, 46, 0.2);
+        }
+        
+        /* Articles Grid */
+        .articles-container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .article-card-large {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+        
+        .article-card-large:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .article-image-large {
+            height: 200px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-image-large::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+        
+        .article-card-large:hover .article-image-large::before {
+            transform: translateX(100%);
+        }
+        
+        .article-content-large {
+            padding: 2rem;
+        }
+        
+        .article-content-large h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            line-height: 1.4;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .article-meta i {
+            color: var(--secondary-color);
+        }
+        
+        .article-excerpt {
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .tag {
+            background: linear-gradient(135deg, rgba(45, 90, 160, 0.1) 0%, rgba(45, 90, 160, 0.05) 100%);
+            color: var(--secondary-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            background: var(--gradient-accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .read-article-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .read-article-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(45, 90, 160, 0.3);
+        }
+        
+        /* Ad Container */
+        .ad-container {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .ad-space {
+            min-height: 250px;
+            background: linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.8) 100%);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 3rem 0;
+        }
+        
+        .page-btn {
+            padding: 12px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        
+        .page-btn:hover,
+        .page-btn.active {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        
+        .sidebar-widget {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow-light);
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .sidebar-widget h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--border-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        /* Newsletter Widget */
+        .newsletter-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter-box h3 {
+            color: white;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .newsletter-box input {
+            width: 100%;
+            padding: 14px 18px;
+            margin: 1.2rem 0;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.95);
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-box input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(214, 158, 46, 0.3);
+        }
+        
+        .newsletter-box button {
+            width: 100%;
+            padding: 14px;
+            background: var(--gradient-accent);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .newsletter-box button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(214, 158, 46, 0.4);
+        }
+        
+        /* Popular Articles Widget */
+        .popular-article {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .popular-article:last-child {
+            border-bottom: none;
+        }
+        
+        .popular-article .number {
+            background: var(--gradient-accent);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        
+        .popular-article-content h4 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+            line-height: 1.4;
+        }
+        
+        .popular-article-content h4 a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .popular-article-content h4 a:hover {
+            color: var(--primary-color);
+        }
+        
+        .popular-meta {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 4rem 0 2.5rem;
+            margin-top: 4rem;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 1.8rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .articles-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
+            .articles-hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 1.2rem;
+                right: 1.5rem;
+            }
+            
+            .mobile-nav {
+                display: none;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            
+            .mobile-nav.active {
+                display: block;
+            }
+            
+            .mobile-nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            
+            .articles-hero {
+                padding: 3rem 1.5rem;
+            }
+            
+            .articles-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .articles-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-filter {
+                justify-content: center;
+            }
+        }
+        
+        /* Article Badge */
+        .article-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gradient-accent);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Loading Animation */
+        .loading-spinner {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border-color);
+            border-top: 3px solid var(--secondary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">✨</div>
+                <div>
+                    <div class="logo-text">Daily Inspiration Hub</div>
+                    <div class="logo-tagline">Transform Your Life Today</div>
+                </div>
+            </a>
+            
+          
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="articles.html" class="active">Articles</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        
+    </header>
+    
+    <!-- Articles Hero -->
+    <section class="articles-hero">
+        <div class="hero-content">
+            <h1>Complete Articles Collection</h1>
+            <p>Browse our library of 20+ articles on motivation, productivity, and personal development. New articles added weekly to help you achieve success in all areas of life.</p>
+        </div>
+    </section>
+    
+    
+    
+    <!-- Main Content -->
+    <div class="articles-main">
+        <!-- Main Content Area -->
+        <div class="articles-container">
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <button class="category-btn active" data-category="all">All Articles</button>
+                <button class="category-btn" data-category="productivity">Productivity</button>
+                <button class="category-btn" data-category="mindset">Mindset</button>
+                <button class="category-btn" data-category="wellness">Wellness</button>
+                <button class="category-btn" data-category="career">Career</button>
+                <button class="category-btn" data-category="habits">Habits</button>
+                <button class="category-btn" data-category="success">Success</button>
+            </div>
+            
+            <!-- Articles Grid -->
+            <div class="articles-grid" id="articlesGrid">
+    <div class="article-card-large" id="article1" data-category="mindset">
+                <div class="article-image-large">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>Building Mental Resilience in Challenging Times</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 7 min read</span>
+                        <span><i class="far fa-calendar"></i> October 20, 2023</span>
+                        <span><i class="far fa-user"></i> By Sarah Johnson</span>
+                    </div>
+                    <p class="article-excerpt">Learn powerful techniques to develop mental toughness and emotional resilience. Discover how to bounce back from setbacks stronger than ever before with practical strategies used by psychologists and successful individuals.</p>
+                    <div class="article-tags">
+                        <span class="tag">Mindset</span>
+                        <span class="tag">Mental Health</span>
+                        <span class="tag">Resilience</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 2 -->
+            <div class="article-card-large" id="article2" data-category="habits">
+                <div class="article-image-large">
+                    <i class="fas fa-sun"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>The Perfect Morning Routine for Maximum Productivity</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 8 min read</span>
+                        <span><i class="far fa-calendar"></i> October 18, 2023</span>
+                        <span><i class="far fa-user"></i> By Michael Chen</span>
+                    </div>
+                    <p class="article-excerpt">Discover the morning habits that successful CEOs, entrepreneurs, and athletes swear by. Learn how to structure your first hour for optimal energy, focus, and achievement throughout the day.</p>
+                    <div class="article-tags">
+                        <span class="tag">Habits</span>
+                        <span class="tag">Productivity</span>
+                        <span class="tag">Morning Routine</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 3 -->
+            <div class="article-card-large" id="article3" data-category="success">
+                <div class="article-image-large">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>Goal Setting Strategies That Actually Work</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 9 min read</span>
+                        <span><i class="far fa-calendar"></i> October 16, 2023</span>
+                        <span><i class="far fa-user"></i> By David Wilson</span>
+                    </div>
+                    <p class="article-excerpt">Move beyond traditional SMART goals and learn advanced goal-setting techniques used by top performers. Discover how to set goals that actually get accomplished through psychological principles and practical frameworks.</p>
+                    <div class="article-tags">
+                        <span class="tag">Success</span>
+                        <span class="tag">Goals</span>
+                        <span class="tag">Planning</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 4 -->
+            <div class="article-card-large" id="article4" data-category="mindset">
+                <div class="article-image-large">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>Developing a Growth Mindset: The Key to Continuous Improvement</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                        <span><i class="far fa-calendar"></i> October 14, 2023</span>
+                        <span><i class="far fa-user"></i> By Dr. Emily Parker</span>
+                    </div>
+                    <p class="article-excerpt">Learn how to cultivate a growth mindset based on Carol Dweck's research. Discover practical exercises to transform fixed thinking patterns and embrace challenges as opportunities for development.</p>
+                    <div class="article-tags">
+                        <span class="tag">Mindset</span>
+                        <span class="tag">Growth</span>
+                        <span class="tag">Learning</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 5 -->
+            <div class="article-card-large" id="article5" data-category="productivity">
+                <div class="article-image-large">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>The Eisenhower Matrix: Mastering Priority Management</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 7 min read</span>
+                        <span><i class="far fa-calendar"></i> October 12, 2023</span>
+                        <span><i class="far fa-user"></i> By Robert Kim</span>
+                    </div>
+                    <p class="article-excerpt">Learn how to use the Eisenhower Matrix to distinguish between urgent and important tasks. This time management tool helps you focus on what truly matters and eliminate time-wasting activities.</p>
+                    <div class="article-tags">
+                        <span class="tag">Productivity</span>
+                        <span class="tag">Time Management</span>
+                        <span class="tag">Prioritization</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 6 -->
+            <div class="article-card-large" id="article6" data-category="mindset">
+                <div class="article-image-large">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>The Psychology of Motivation: How to Stay Driven Long-Term</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 8 min read</span>
+                        <span><i class="far fa-calendar"></i> October 10, 2023</span>
+                        <span><i class="far fa-user"></i> By Lisa Martinez</span>
+                    </div>
+                    <p class="article-excerpt">Understand the science behind motivation and learn techniques to maintain drive even when facing obstacles. Discover how to tap into both intrinsic and extrinsic motivation for sustainable success.</p>
+                    <div class="article-tags">
+                        <span class="tag">Mindset</span>
+                        <span class="tag">Motivation</span>
+                        <span class="tag">Psychology</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 7 -->
+            <div class="article-card-large" id="article7" data-category="wellness">
+                <div class="article-image-large">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>Mindfulness Meditation for Stress Reduction and Focus</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 5 min read</span>
+                        <span><i class="far fa-calendar"></i> October 8, 2023</span>
+                        <span><i class="far fa-user"></i> By James Wilson</span>
+                    </div>
+                    <p class="article-excerpt">Learn simple mindfulness techniques that can reduce stress by up to 30% and improve focus by 40%. Practical meditation exercises you can incorporate into your daily routine starting today.</p>
+                    <div class="article-tags">
+                        <span class="tag">Wellness</span>
+                        <span class="tag">Meditation</span>
+                        <span class="tag">Stress Relief</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 8 -->
+            <div class="article-card-large" id="article8" data-category="habits">
+                <div class="article-image-large">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>The Power of Atomic Habits: Small Changes, Remarkable Results</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 10 min read</span>
+                        <span><i class="far fa-calendar"></i> October 6, 2023</span>
+                        <span><i class="far fa-user"></i> By Thomas Reed</span>
+                    </div>
+                    <p class="article-excerpt">Based on James Clear's bestselling book, learn how tiny changes in your daily habits can lead to extraordinary results over time. Discover the four laws of behavior change and how to apply them.</p>
+                    <div class="article-tags">
+                        <span class="tag">Habits</span>
+                        <span class="tag">Behavior Change</span>
+                        <span class="tag">Self-Improvement</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 9 -->
+            <div class="article-card-large" id="article9" data-category="career">
+                <div class="article-image-large">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>Career Advancement Strategies in the Modern Workplace</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 9 min read</span>
+                        <span><i class="far fa-calendar"></i> October 4, 2023</span>
+                        <span><i class="far fa-user"></i> By Jennifer Lee</span>
+                    </div>
+                    <p class="article-excerpt">Learn how to navigate career growth in today's dynamic work environment. From skill development to networking strategies, discover proven methods to advance your career efficiently.</p>
+                    <div class="article-tags">
+                        <span class="tag">Career</span>
+                        <span class="tag">Professional Growth</span>
+                        <span class="tag">Workplace</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 10 -->
+            <div class="article-card-large" id="article10" data-category="productivity">
+                <div class="article-image-large">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>The Pomodoro Technique: Maximizing Focus and Minimizing Burnout</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                        <span><i class="far fa-calendar"></i> October 2, 2023</span>
+                        <span><i class="far fa-user"></i> By Carlos Rodriguez</span>
+                    </div>
+                    <p class="article-excerpt">Master the Pomodoro Technique to boost productivity by working with your brain's natural rhythms. Learn how to structure work sessions for maximum efficiency and sustainable energy levels.</p>
+                    <div class="article-tags">
+                        <span class="tag">Productivity</span>
+                        <span class="tag">Focus</span>
+                        <span class="tag">Time Management</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 11 -->
+            <div class="article-card-large" id="article11" data-category="wellness">
+                <div class="article-image-large">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>Achieving Work-Life Balance in a Hyper-Connected World</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 8 min read</span>
+                        <span><i class="far fa-calendar"></i> September 30, 2023</span>
+                        <span><i class="far fa-user"></i> By Amanda Scott</span>
+                    </div>
+                    <p class="article-excerpt">Discover practical strategies to maintain healthy boundaries between work and personal life. Learn how to disconnect digitally and create meaningful separation for better mental health.</p>
+                    <div class="article-tags">
+                        <span class="tag">Wellness</span>
+                        <span class="tag">Work-Life Balance</span>
+                        <span class="tag">Mental Health</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 12 -->
+            <div class="article-card-large" id="article12" data-category="success">
+                <div class="article-image-large">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>The Compound Effect: How Small Decisions Lead to Big Success</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 7 min read</span>
+                        <span><i class="far fa-calendar"></i> September 28, 2023</span>
+                        <span><i class="far fa-user"></i> By Brian Taylor</span>
+                    </div>
+                    <p class="article-excerpt">Understand the power of compound effect in personal and professional growth. Learn how consistent small actions, when repeated over time, can lead to extraordinary results.</p>
+                    <div class="article-tags">
+                        <span class="tag">Success</span>
+                        <span class="tag">Consistency</span>
+                        <span class="tag">Long-term Growth</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 13 -->
+            <div class="article-card-large" id="article13" data-category="mindset">
+                <div class="article-image-large">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>Effective Communication Skills for Personal and Professional Success</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 8 min read</span>
+                        <span><i class="far fa-calendar"></i> September 26, 2023</span>
+                        <span><i class="far fa-user"></i> By Dr. Richard Chen</span>
+                    </div>
+                    <p class="article-excerpt">Master the art of communication to build better relationships and advance your career. Learn active listening techniques, assertive communication, and how to handle difficult conversations.</p>
+                    <div class="article-tags">
+                        <span class="tag">Mindset</span>
+                        <span class="tag">Communication</span>
+                        <span class="tag">Relationships</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 14 -->
+            <div class="article-card-large" id="article14" data-category="productivity">
+                <div class="article-image-large">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>Digital Detox: Reclaiming Your Focus in an Age of Distraction</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 7 min read</span>
+                        <span><i class="far fa-calendar"></i> September 24, 2023</span>
+                        <span><i class="far fa-user"></i> By Samantha Green</span>
+                    </div>
+                    <p class="article-excerpt">Learn how to reduce digital distractions and reclaim your attention. Practical strategies for managing notifications, social media use, and creating tech-free zones for better focus.</p>
+                    <div class="article-tags">
+                        <span class="tag">Productivity</span>
+                        <span class="tag">Focus</span>
+                        <span class="tag">Digital Wellness</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 15 -->
+            <div class="article-card-large" id="article15" data-category="habits">
+                <div class="article-image-large">
+                    <i class="fas fa-bed"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>The Science of Sleep: How Quality Rest Boosts Performance</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                        <span><i class="far fa-calendar"></i> September 22, 2023</span>
+                        <span><i class="far fa-user"></i> By Dr. Michael Brown</span>
+                    </div>
+                    <p class="article-excerpt">Discover how optimizing your sleep can improve cognitive function, emotional regulation, and physical health. Learn evidence-based strategies for better sleep hygiene and restful nights.</p>
+                    <div class="article-tags">
+                        <span class="tag">Habits</span>
+                        <span class="tag">Health</span>
+                        <span class="tag">Sleep</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 16 -->
+            <div class="article-card-large" id="article16" data-category="success">
+                <div class="article-image-large">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>Strategic Networking: Building Meaningful Professional Relationships</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 9 min read</span>
+                        <span><i class="far fa-calendar"></i> September 20, 2023</span>
+                        <span><i class="far fa-user"></i> By Kevin Johnson</span>
+                    </div>
+                    <p class="article-excerpt">Learn how to build a powerful professional network that supports your career goals. Discover authentic networking strategies that focus on giving value and building genuine connections.</p>
+                    <div class="article-tags">
+                        <span class="tag">Success</span>
+                        <span class="tag">Networking</span>
+                        <span class="tag">Career</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 17 -->
+            <div class="article-card-large" id="article17" data-category="wellness">
+                <div class="article-image-large">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>Nutrition for Mental Clarity and Energy Optimization</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 7 min read</span>
+                        <span><i class="far fa-calendar"></i> September 18, 2023</span>
+                        <span><i class="far fa-user"></i> By Nutritionist Lisa Wang</span>
+                    </div>
+                    <p class="article-excerpt">Discover how proper nutrition affects cognitive function, mood, and energy levels. Learn about brain-boosting foods and eating patterns that support mental performance throughout the day.</p>
+                    <div class="article-tags">
+                        <span class="tag">Wellness</span>
+                        <span class="tag">Nutrition</span>
+                        <span class="tag">Health</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 18 -->
+            <div class="article-card-large" id="article18" data-category="mindset">
+                <div class="article-image-large">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>Overcoming Imposter Syndrome and Building Self-Confidence</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 8 min read</span>
+                        <span><i class="far fa-calendar"></i> September 16, 2023</span>
+                        <span><i class="far fa-user"></i> By Dr. Susan Miller</span>
+                    </div>
+                    <p class="article-excerpt">Learn practical strategies to overcome imposter syndrome and develop authentic self-confidence. Discover cognitive techniques to reframe negative self-talk and recognize your achievements.</p>
+                    <div class="article-tags">
+                        <span class="tag">Mindset</span>
+                        <span class="tag">Confidence</span>
+                        <span class="tag">Self-Esteem</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 19 -->
+            <div class="article-card-large" id="article19" data-category="productivity">
+                <div class="article-image-large">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>Weekly Planning Systems for Stress-Free Productivity</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                        <span><i class="far fa-calendar"></i> September 14, 2023</span>
+                        <span><i class="far fa-user"></i> By Productivity Coach Mark</span>
+                    </div>
+                    <p class="article-excerpt">Discover effective weekly planning systems that reduce stress and increase productivity. Learn how to batch tasks, allocate time effectively, and create sustainable work rhythms.</p>
+                    <div class="article-tags">
+                        <span class="tag">Productivity</span>
+                        <span class="tag">Planning</span>
+                        <span class="tag">Organization</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article 20 -->
+            <div class="article-card-large" id="article20" data-category="success">
+                <div class="article-image-large">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <div class="article-content-large">
+                    <h3>Emotional Intelligence: The Secret Weapon for Professional Success</h3>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 9 min read</span>
+                        <span><i class="far fa-calendar"></i> September 12, 2023</span>
+                        <span><i class="far fa-user"></i> By Leadership Expert Tom</span>
+                    </div>
+                    <p class="article-excerpt">Learn how to develop emotional intelligence (EQ) for better leadership, teamwork, and career advancement. Discover the five components of EQ and practical exercises to improve each area.</p>
+                    <div class="article-tags">
+                        <span class="tag">Success</span>
+                        <span class="tag">Leadership</span>
+                        <span class="tag">Emotional Intelligence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+            </div>
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Search Widget -->
+            <div class="sidebar-widget">
+                <h3>Search Articles</h3>
+                <div style="position: relative;">
+                    <input type="text" placeholder="Search articles..." id="searchInput" style="width: 100%; padding: 12px 16px; border: 2px solid var(--border-color); border-radius: 8px; font-size: 1rem; transition: all 0.3s ease;">
+                    <button style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--secondary-color); cursor: pointer;">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Newsletter Widget -->
+            <div class="sidebar-widget newsletter-box">
+                <h3>Get Weekly Inspiration</h3>
+                <p>Join our community and receive exclusive tips, strategies, and motivation delivered to your inbox every Monday.</p>
+                <input type="email" placeholder="Your email address" id="newsletterEmail">
+                <button id="subscribeBtn">Subscribe Now</button>
+                <p style="font-size: 0.85rem; margin-top: 12px; opacity: 0.9;">No spam. Unsubscribe anytime.</p>
+            </div>
+            
+           
+            
+            <!-- Popular Articles Widget -->
+            <div class="sidebar-widget">
+                <h3>Most Popular Articles</h3>
+                <div style="margin-top: 1rem;">
+                    <div class="popular-article">
+                        <div class="number">1</div>
+                        <div class="popular-article-content">
+                            <h4><a href="#article2">The Perfect Morning Routine for Maximum Productivity</a></h4>
+                            <div class="popular-meta">
+                                <span><i class="far fa-eye"></i> 2,845 views</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popular-article">
+                        <div class="number">2</div>
+                        <div class="popular-article-content">
+                            <h4><a href="#article6">The Psychology of Motivation</a></h4>
+                            <div class="popular-meta">
+                                <span><i class="far fa-eye"></i> 2,120 views</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popular-article">
+                        <div class="number">3</div>
+                        <div class="popular-article-content">
+                            <h4><a href="#article4">Developing a Growth Mindset</a></h4>
+                            <div class="popular-meta">
+                                <span><i class="far fa-eye"></i> 1,980 views</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popular-article">
+                        <div class="number">4</div>
+                        <div class="popular-article-content">
+                            <h4><a href="#article1">Building Mental Resilience</a></h4>
+                            <div class="popular-meta">
+                                <span><i class="far fa-eye"></i> 1,750 views</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popular-article">
+                        <div class="number">5</div>
+                        <div class="popular-article-content">
+                            <h4><a href="#article3">Goal Setting Strategies</a></h4>
+                            <div class="popular-meta">
+                                <span><i class="far fa-eye"></i> 1,620 views</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Categories Widget -->
+            <div class="sidebar-widget">
+                <h3>Article Categories</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
+                    <button class="category-btn" data-category="productivity" style="padding: 8px 16px; font-size: 0.85rem;">Productivity</button>
+                    <button class="category-btn" data-category="mindset" style="padding: 8px 16px; font-size: 0.85rem;">Mindset</button>
+                    <button class="category-btn" data-category="wellness" style="padding: 8px 16px; font-size: 0.85rem;">Wellness</button>
+                    <button class="category-btn" data-category="career" style="padding: 8px 16px; font-size: 0.85rem;">Career</button>
+                    <button class="category-btn" data-category="habits" style="padding: 8px 16px; font-size: 0.85rem;">Habits</button>
+                    <button class="category-btn" data-category="success" style="padding: 8px 16px; font-size: 0.85rem;">Success</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Daily Inspiration Hub</h3>
+                <p>Providing practical motivation, productivity strategies, and personal development tips since 2023.</p>
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="articles.html"><i class="fas fa-newspaper"></i> All Articles</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Popular Topics</h3>
+                <ul class="footer-links">
+                    <li><a href="#productivity"><i class="fas fa-rocket"></i> Productivity Tips</a></li>
+                    <li><a href="#habits"><i class="fas fa-sun"></i> Morning Routines</a></li>
+                    <li><a href="#success"><i class="fas fa-bullseye"></i> Goal Setting</a></li>
+                    <li><a href="#wellness"><i class="fas fa-heart"></i> Mental Health</a></li>
+                    <li><a href="#career"><i class="fas fa-briefcase"></i> Career Advice</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:contact@dailyinspirationhub.com"><i class="far fa-envelope"></i> contact@dailyinspirationhub.com</a></li>
+                    <li><a href="#"><i class="far fa-clock"></i> Mon-Fri: 9AM-6PM EST</a></li>
+                    <li><a href="#"><i class="fas fa-globe"></i> Based in the United States</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; <span id="currentYear"></span> Daily Inspiration Hub. All rights reserved. 
+            <div style="margin-top: 0.8rem; font-size: 0.85rem;">This website provides educational content for personal development and motivation.</div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileNav.classList.toggle('active');
+                mobileMenuBtn.innerHTML = mobileNav.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+        }
+        
+        // Newsletter subscription
+        const subscribeBtn = document.getElementById('subscribeBtn');
+        if (subscribeBtn) {
+            subscribeBtn.addEventListener('click', () => {
+                const email = document.getElementById('newsletterEmail').value;
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                if (email && emailRegex.test(email)) {
+                    // Show loading state
+                    subscribeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
+                    subscribeBtn.disabled = true;
+                    
+                    // Simulate API call
+                    setTimeout(() => {
+                        alert('Thank you for subscribing to Daily Inspiration Hub! You\'ll receive your first newsletter next Monday.');
+                        document.getElementById('newsletterEmail').value = '';
+                        subscribeBtn.innerHTML = 'Subscribe Now';
+                        subscribeBtn.disabled = false;
+                    }, 1500);
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+        }
+        
+        // Category filter functionality
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const articles = document.querySelectorAll('.article-card-large');
+        
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const category = btn.getAttribute('data-category');
+                
+                // Show/hide articles based on category
+                articles.forEach(article => {
+                    if (category === 'all' || article.getAttribute('data-category') === category) {
+                        article.style.display = 'block';
+                        setTimeout(() => {
+                            article.style.opacity = '1';
+                            article.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        article.style.opacity = '0';
+                        article.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            article.style.display = 'none';
+                        }, 300);
+                    }
+                });
+                
+                // Show loading indicator
+                const loadingSpinner = document.getElementById('loadingSpinner');
+                if (loadingSpinner) {
+                    loadingSpinner.style.display = 'block';
+                    setTimeout(() => {
+                        loadingSpinner.style.display = 'none';
+                    }, 500);
+                }
+            });
+        });
+        
+        // Article read function
+        function readArticle(articleId) {
+            const article = document.getElementById(articleId);
+            const title = article.querySelector('h3').textContent;
+            
+            // Show reading modal or redirect to article page
+            alert(`Now reading: "${title}"\n\nIn a full implementation, this would open a detailed article page with complete content.`);
+            
+            // Track article view (for analytics)
+            console.log(`Article viewed: ${articleId} - ${title}`);
+        }
+        
+        // Pagination functionality
+        const pageBtns = document.querySelectorAll('.page-btn');
+        pageBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (!btn.classList.contains('active')) {
+                    pageBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // Show loading animation
+                    const articlesGrid = document.getElementById('articlesGrid');
+                    articlesGrid.style.opacity = '0.5';
+                    
+                    // Simulate loading new page
+                    setTimeout(() => {
+                        articlesGrid.style.opacity = '1';
+                        alert('In a full implementation, this would load a new page of articles.');
+                    }, 500);
+                }
+            });
+        });
+        
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                
+                if (searchTerm.length > 2) {
+                    articles.forEach(article => {
+                        const title = article.querySelector('h3').textContent.toLowerCase();
+                        const excerpt = article.querySelector('.article-excerpt').textContent.toLowerCase();
+                        const tags = Array.from(article.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase());
+                        
+                        if (title.includes(searchTerm) || excerpt.includes(searchTerm) || tags.some(tag => tag.includes(searchTerm))) {
+                            article.style.display = 'block';
+                        } else {
+                            article.style.display = 'none';
+                        }
+                    });
+                } else if (searchTerm.length === 0) {
+                    articles.forEach(article => {
+                        article.style.display = 'block';
+                    });
+                }
+            });
+        }
+        
+        // Add scroll animation to articles
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe articles for animation
+        document.querySelectorAll('.article-card-large').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Smooth scroll to article when clicking on popular articles
+        document.querySelectorAll('.popular-article-content a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                if (href.startsWith('#')) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

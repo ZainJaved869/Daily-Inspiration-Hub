@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Daily Inspiration Hub - Our mission to provide practical motivation and personal development strategies for success in life and work.">
+    <title>About Us - Daily Inspiration Hub</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d5aa0;
+            --accent-color: #d69e2e;
+            --light-color: #f8fafc;
+            --dark-color: #2d3748;
+            --text-color: #4a5568;
+            --border-color: #e2e8f0;
+            --success-color: #38a169;
+            --card-bg: #ffffff;
+            --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 6px 20px rgba(0, 0, 0, 0.08);
+            --gradient-primary: linear-gradient(135deg, #1a365d 0%, #2d5aa0 100%);
+            --gradient-accent: linear-gradient(135deg, #d69e2e 0%, #b7791f 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            min-height: 100vh;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(45, 90, 160, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(214, 158, 46, 0.03) 0%, transparent 20%);
+            z-index: -1;
+        }
+        
+        /* Header */
+        header {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-tagline {
+            font-size: 0.85rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-top: 2px;
+        }
+        
+        /* Navigation */
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .main-nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .main-nav a:hover {
+            color: var(--primary-color);
+            background: rgba(45, 90, 160, 0.05);
+        }
+        
+        .main-nav a.active {
+            color: var(--primary-color);
+            background: rgba(45, 90, 160, 0.1);
+        }
+        
+        .main-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 3px;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        /* About Hero */
+        .about-hero {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0L0 0 0 20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        }
+        
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .about-hero p {
+            font-size: 1.3rem;
+            margin: 0 auto 2.5rem;
+            opacity: 0.95;
+            max-width: 700px;
+        }
+        
+        /* Main Content Container */
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        /* Content Cards */
+        .content-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow-light);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .content-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            font-size: 2.2rem;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .content-card h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+        }
+        
+        .content-card h3 {
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .content-card p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+        
+        /* Mission Section */
+        .mission-box {
+            background: linear-gradient(135deg, rgba(248, 250, 252, 0.9) 0%, rgba(241, 245, 249, 0.9) 100%);
+            border-left: 5px solid var(--accent-color);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            border-radius: 0 12px 12px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+        
+        .mission-box:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .mission-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .value-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow-light);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            padding: 1rem;
+            background: rgba(214, 158, 46, 0.1);
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .value-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .value-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .stat-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow-light);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(45, 90, 160, 0.05) 0%, transparent 100%);
+            z-index: 1;
+        }
+        
+        .stat-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        /* Team Section */
+        .team-section {
+            margin: 4rem 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .team-member {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow-light);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .member-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            box-shadow: 0 4px 15px rgba(45, 90, 160, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .member-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+        
+        .team-member:hover .member-icon::before {
+            transform: translateX(100%);
+        }
+        
+        .member-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .member-role {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            background: rgba(214, 158, 46, 0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        
+        .member-bio {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin-top: 1rem;
+        }
+        
+        /* Ad Container */
+        .ad-container {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .ad-space {
+            min-height: 250px;
+            background: linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.8) 100%);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+        
+        /* Call to Action */
+        .cta-section {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin: 0 auto 2.5rem;
+            opacity: 0.95;
+            max-width: 700px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient-accent);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(214, 158, 46, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(214, 158, 46, 0.4);
+        }
+        
+        .cta-button.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-button.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 4rem 0 2.5rem;
+            margin-top: 4rem;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 1.8rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 1.2rem;
+                right: 1.5rem;
+            }
+            
+            .mobile-nav {
+                display: none;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            
+            .mobile-nav.active {
+                display: block;
+            }
+            
+            .mobile-nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            
+            .about-hero {
+                padding: 3rem 1.5rem;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .content-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .values-grid,
+            .team-grid,
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .cta-section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+        
+        /* Feature List */
+        .feature-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .feature-list li {
+            margin-bottom: 1.2rem;
+            padding-left: 2.5rem;
+            position: relative;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .feature-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 20px;
+            height: 20px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            content: '\f00c';
+            color: white;
+            font-size: 0.7rem;
+        }
+        
+        /* Loading Animation */
+        .loading-spinner {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border-color);
+            border-top: 3px solid var(--secondary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">✨</div>
+                <div>
+                    <div class="logo-text">Daily Inspiration Hub</div>
+                    <div class="logo-tagline">Transform Your Life Today</div>
+                </div>
+            </a>
+            
+           
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                </ul>
+            </nav>
+        </div>
+      
+    </header>
+    
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <h1>About Daily Inspiration Hub</h1>
+            <p>Empowering individuals worldwide with practical motivation, productivity strategies, and personal development insights since 2023.</p>
+        </div>
+    </section>
+    
+    
+    <!-- Main Content -->
+    <div class="about-container">
+        <!-- Story Section -->
+        <div class="content-card">
+            <h2>Our Story</h2>
+            <p>Daily Inspiration Hub was founded in 2023 by a team of personal development enthusiasts who noticed a significant gap in the market for practical, actionable motivation content. While there were plenty of inspirational quotes and theoretical advice available, there was a lack of evidence-based, implementable strategies that people could apply to their daily lives.</p>
+            
+            <p>What began as a small passion project has grown into a comprehensive platform serving thousands of readers across 50+ countries. Our commitment to quality content and practical application has helped us build a loyal community of individuals dedicated to personal growth and professional development.</p>
+            
+            <div class="mission-box">
+                <h3>Our Mission</h3>
+                <p>To provide evidence-based, practical strategies that help individuals transform their lives, careers, and well-being through accessible personal development content that bridges the gap between inspiration and implementation.</p>
+            </div>
+        </div>
+        
+        <!-- Values Section -->
+        <div class="content-card">
+            <h2>Our Core Values</h2>
+            <p>These guiding principles shape everything we do at Daily Inspiration Hub, from content creation to community engagement:</p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h4>Practical Wisdom</h4>
+                    <p>We focus on strategies you can implement immediately, not just theoretical concepts. Every article includes actionable steps for real-world application.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-heart"></i></div>
+                    <h4>Authenticity</h4>
+                    <p>We share real experiences and honest insights, not polished perfection. Our content is grounded in real-world application and genuine understanding.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-rocket"></i></div>
+                    <h4>Continuous Growth</h4>
+                    <p>We're committed to evolving alongside our community, constantly improving our content based on feedback and new research findings.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-users"></i></div>
+                    <h4>Community Focus</h4>
+                    <p>We build meaningful relationships with our readers, addressing their real challenges and creating content that solves their specific problems.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h4>Holistic Approach</h4>
+                    <p>We address productivity, mindset, health, and relationships - understanding that true success requires balance in all areas of life.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h4>Evidence-Based</h4>
+                    <p>Our content combines practical experience with scientific research from psychology, neuroscience, and behavioral economics.</p>
+                </div>
+            </div>
+        </div>
+        
+       
+        <!-- Differentiators Section -->
+        <div class="content-card">
+            <h2>What Makes Us Different</h2>
+            <p>Unlike many personal development websites that focus primarily on motivation without practical application, Daily Inspiration Hub bridges the gap between inspiration and implementation. Here's what sets us apart:</p>
+            
+            <ul class="feature-list">
+                <li><strong>Action-Oriented Content:</strong> Every article includes specific, actionable steps you can take immediately to create real change in your life.</li>
+                <li><strong>Research-Backed Strategies:</strong> We combine practical experience with scientific research from psychology, neuroscience, and behavioral economics.</li>
+                <li><strong>Regular Updates:</strong> New content added weekly to address current challenges, trends, and the evolving needs of our community.</li>
+                <li><strong>Comprehensive Coverage:</strong> We address all aspects of personal and professional development, from mindset to productivity to wellness.</li>
+                <li><strong>Community-Driven Content:</strong> Our articles are shaped by reader feedback and the real challenges our community faces.</li>
+                <li><strong>Accessible Expertise:</strong> We make complex concepts simple and actionable, breaking down barriers to personal growth.</li>
+            </ul>
+            
+            <div class="mission-box">
+                <h3>Our Commitment to Quality</h3>
+                <p>Every article published on Daily Inspiration Hub undergoes a rigorous editorial process including research verification, practical testing, and peer review to ensure accuracy, relevance, and practical value for our readers. We invest significant time in each piece to ensure it meets our high standards for quality and usefulness.</p>
+            </div>
+        </div>
+        
+        <!-- Impact Section -->
+        <div class="content-card">
+            <h2>Our Impact & Reach</h2>
+            <p>Since our launch in 2023, Daily Inspiration Hub has grown into a trusted resource for personal development. Here's what we've accomplished together with our community:</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Detailed Articles</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Countries Reached</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-label">Monthly Readers</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-number">Weekly</div>
+                        <div class="stat-label">Content Updates</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Team Section -->
+        <div class="content-card team-section">
+            <h2>Meet Our Team</h2>
+            <p>Daily Inspiration Hub is powered by a dedicated team of writers, editors, and personal development experts committed to creating valuable content for our community. Our diverse backgrounds and shared passion for personal growth drive our mission forward.</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-icon"><i class="fas fa-user-tie"></i></div>
+                    <div class="member-name">Alex Johnson</div>
+                    <div class="member-role">Founder & Editor-in-Chief</div>
+                    <p class="member-bio">With over 10 years in personal development coaching and content creation, Alex brings practical experience and strategic vision to Daily Inspiration Hub. His background includes corporate training, life coaching, and authorship of two bestselling personal development books.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-icon"><i class="fas fa-user-graduate"></i></div>
+                    <div class="member-name">Dr. Sarah Chen</div>
+                    <div class="member-role">Psychology Expert</div>
+                    <p class="member-bio">Sarah holds a PhD in Psychology specializing in motivation and behavior change. With 8 years of academic research and clinical experience, she ensures our content is grounded in scientific evidence while remaining accessible and practical for everyday application.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-icon"><i class="fas fa-user-edit"></i></div>
+                    <div class="member-name">Michael Roberts</div>
+                    <div class="member-role">Content Strategist</div>
+                    <p class="member-bio">A former journalist with 12 years of experience in content creation, Michael brings expertise in productivity, career development, and digital communication. He's passionate about transforming complex ideas into actionable insights that readers can apply immediately.</p>
+                </div>
+            </div>
+        </div>
+        
+      
+        
+        <!-- Join Community Section -->
+        <div class="content-card">
+            <h2>Join Our Community</h2>
+            <p>Whether you're just beginning your personal development journey or you're an experienced professional looking to reach new heights, Daily Inspiration Hub offers valuable insights and practical strategies to support your growth.</p>
+            
+            <p>We believe that everyone has the potential for growth and achievement, and we're committed to providing the tools and inspiration to help you unlock that potential. Our community is diverse, supportive, and united by a shared commitment to personal growth and mutual success.</p>
+            
+            <div class="mission-box">
+                <h3>Your Journey Starts Here</h3>
+                <p>Every great achievement begins with a single step. Whether you're looking to improve your productivity, develop a growth mindset, achieve career success, or enhance your overall wellbeing, Daily Inspiration Hub provides the roadmap and support you need to make meaningful progress.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Start Your Transformation Today</h2>
+            <p>Join thousands of readers who are transforming their lives with our practical strategies and evidence-based insights. Begin your journey toward personal growth and professional success.</p>
+            
+            <div class="cta-buttons">
+                <a href="articles.html" class="cta-button">
+                    <span>Explore All Articles</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="contact.html" class="cta-button secondary">
+                    <span>Contact Our Team</span>
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Daily Inspiration Hub</h3>
+                <p>Providing practical motivation, productivity strategies, and personal development tips since 2023. Empowering individuals to achieve their full potential through evidence-based insights.</p>
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="articles.html"><i class="fas fa-newspaper"></i> All Articles</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Popular Categories</h3>
+                <ul class="footer-links">
+                    <li><a href="articles.html#productivity"><i class="fas fa-rocket"></i> Productivity Tips</a></li>
+                    <li><a href="articles.html#mindset"><i class="fas fa-brain"></i> Mindset Development</a></li>
+                    <li><a href="articles.html#wellness"><i class="fas fa-heart"></i> Wellness & Health</a></li>
+                    <li><a href="articles.html#career"><i class="fas fa-briefcase"></i> Career Growth</a></li>
+                    <li><a href="articles.html#habits"><i class="fas fa-sun"></i> Habit Formation</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Information</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:contact@dailyinspirationhub.com"><i class="far fa-envelope"></i> contact@dailyinspirationhub.com</a></li>
+                    <li><a href="#"><i class="far fa-clock"></i> Mon-Fri: 9AM-6PM EST</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Based in the United States</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; <span id="currentYear"></span> Daily Inspiration Hub. All rights reserved. 
+            <div style="margin-top: 0.8rem; font-size: 0.85rem;">This website provides educational content for personal development and motivation. All information is for educational purposes only.</div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileNav.classList.toggle('active');
+                mobileMenuBtn.innerHTML = mobileNav.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+        }
+        
+        // Add scroll animation to content cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe content cards for animation
+        document.querySelectorAll('.content-card, .stat-card, .value-card, .team-member').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Stats counter animation
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const statsSection = document.querySelector('.stats-grid');
+        
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    statNumbers.forEach(stat => {
+                        const target = parseInt(stat.textContent);
+                        let current = 0;
+                        const increment = target / 50;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            stat.textContent = Math.floor(current) + (stat.textContent.includes('+') ? '+' : '');
+                        }, 30);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+    </script>
+</body>
+</html>

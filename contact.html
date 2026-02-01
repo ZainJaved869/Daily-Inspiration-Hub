@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Daily Inspiration Hub. Contact us for questions, feedback, or collaboration opportunities.">
+    <title>Contact Us - Daily Inspiration Hub</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d5aa0;
+            --accent-color: #d69e2e;
+            --light-color: #f8fafc;
+            --dark-color: #2d3748;
+            --text-color: #4a5568;
+            --border-color: #e2e8f0;
+            --success-color: #38a169;
+            --card-bg: #ffffff;
+            --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 6px 20px rgba(0, 0, 0, 0.08);
+            --gradient-primary: linear-gradient(135deg, #1a365d 0%, #2d5aa0 100%);
+            --gradient-accent: linear-gradient(135deg, #d69e2e 0%, #b7791f 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            min-height: 100vh;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(45, 90, 160, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(214, 158, 46, 0.03) 0%, transparent 20%);
+            z-index: -1;
+        }
+        
+        /* Header */
+        header {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-tagline {
+            font-size: 0.85rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-top: 2px;
+        }
+        
+        /* Navigation */
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .main-nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .main-nav a:hover {
+            color: var(--primary-color);
+            background: rgba(45, 90, 160, 0.05);
+        }
+        
+        .main-nav a.active {
+            color: var(--primary-color);
+            background: rgba(45, 90, 160, 0.1);
+        }
+        
+        .main-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 3px;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        /* Contact Hero */
+        .contact-hero {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0L0 0 0 20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        }
+        
+        .contact-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .contact-hero p {
+            font-size: 1.3rem;
+            margin: 0 auto 2.5rem;
+            opacity: 0.95;
+            max-width: 700px;
+        }
+        
+        /* Main Content Layout */
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Content Cards */
+        .content-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow-light);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .content-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            font-size: 2.2rem;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .content-card h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+        }
+        
+        .content-card h3 {
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .content-card p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+        
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        /* Contact Info Box */
+        .contact-info-box {
+            background: linear-gradient(135deg, rgba(248, 250, 252, 0.9) 0%, rgba(241, 245, 249, 0.9) 100%);
+            border-radius: 16px;
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-info-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+        
+        .contact-info-box:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .contact-info-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-info-box h3 i {
+            color: var(--accent-color);
+            background: rgba(214, 158, 46, 0.1);
+            padding: 10px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-detail:hover {
+            background: rgba(255, 255, 255, 0.6);
+            transform: translateX(5px);
+        }
+        
+        .contact-detail i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-top: 3px;
+            width: 24px;
+            text-align: center;
+        }
+        
+        .contact-detail-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .contact-detail-content p {
+            color: var(--text-color);
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--gradient-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(214, 158, 46, 0.3);
+        }
+        
+        /* Contact Form */
+        .contact-form-container {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(45, 90, 160, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--gradient-accent);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(214, 158, 46, 0.3);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(214, 158, 46, 0.4);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .faq-item {
+            background: linear-gradient(135deg, rgba(248, 250, 252, 0.9) 0%, rgba(241, 245, 249, 0.9) 100%);
+            border-radius: 12px;
+            padding: 1.8rem;
+            border-left: 4px solid var(--accent-color);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .faq-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 4rem 0 2.5rem;
+            margin-top: 4rem;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 1.8rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 1.2rem;
+                right: 1.5rem;
+            }
+            
+            .mobile-nav {
+                display: none;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            
+            .mobile-nav.active {
+                display: block;
+            }
+            
+            .mobile-nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            
+            .contact-hero {
+                padding: 3rem 1.5rem;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .content-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Loading Spinner */
+        .loading-spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Success Message */
+        .success-message {
+            background: linear-gradient(135deg, rgba(56, 161, 105, 0.1) 0%, rgba(56, 161, 105, 0.05) 100%);
+            border: 2px solid var(--success-color);
+            color: var(--success-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            text-align: center;
+            display: none;
+        }
+        
+        .success-message i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Feature List */
+        .feature-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .feature-list li {
+            margin-bottom: 1.2rem;
+            padding-left: 2.5rem;
+            position: relative;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .feature-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 20px;
+            height: 20px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            content: '\f00c';
+            color: white;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">✨</div>
+                <div>
+                    <div class="logo-text">Daily Inspiration Hub</div>
+                    <div class="logo-tagline">Transform Your Life Today</div>
+                </div>
+            </a>
+           
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                </ul>
+            </nav>
+        </div>
+       
+    </header>
+    
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h1>Contact Daily Inspiration Hub</h1>
+            <p>We'd love to hear from you! Whether you have questions, suggestions, feedback, or want to share your success story, please don't hesitate to get in touch.</p>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="contact-container">
+        <!-- Contact Grid -->
+        <div class="content-card">
+            <h2>Get In Touch</h2>
+            <p>Reach out to us through any of the following methods. We're here to help and would be delighted to connect with you.</p>
+            
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info-box">
+                    <h3><i class="fas fa-comments"></i> Contact Information</h3>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-detail-content">
+                            <h4>Email Address</h4>
+                            <p>contact@dailyinspirationhub.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-clock"></i>
+                        <div class="contact-detail-content">
+                            <h4>Response Time</h4>
+                            <p>We aim to respond within 24-48 hours during business days</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-globe"></i>
+                        <div class="contact-detail-content">
+                            <h4>Location</h4>
+                            <p>Virtual - Serving readers worldwide from the United States</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-user-clock"></i>
+                        <div class="contact-detail-content">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h3>Send Us a Message</h3>
+                    <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                    
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject *</label>
+                            <select id="subject" name="subject" class="form-control" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="feedback">Website Feedback</option>
+                                <option value="content">Content Suggestion</option>
+                                <option value="collaboration">Collaboration Request</option>
+                                <option value="technical">Technical Issue</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Enter your message here..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="submit-btn" id="submitBtn">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i>
+                        <h4>Message Sent Successfully!</h4>
+                        <p>Thank you for contacting Daily Inspiration Hub. We'll respond to your message as soon as possible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="content-card">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find quick answers to common questions about Daily Inspiration Hub.</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>Can I submit an article or quote for publication?</h4>
+                    <p>Yes! We welcome thoughtful submissions from our community. Please use the contact form to share your ideas. While we review all submissions, we cannot guarantee publication.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Do you offer guest posting opportunities?</h4>
+                    <p>We occasionally accept guest posts from qualified writers in the personal development space. Please send your writing samples and topic ideas through our contact form.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>How often is new content published?</h4>
+                    <p>We publish new articles weekly, with regular updates and insights shared through our social media channels.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Can I use your content on my website?</h4>
+                    <p>You may share small excerpts (up to 100 words) with proper attribution and a link back to the original article. For commercial use or larger excerpts, please contact us first.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Do you offer coaching or consulting services?</h4>
+                    <p>Currently, we focus on providing free educational content through our website. We may offer coaching services in the future - stay tuned for updates!</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>How can I support Daily Inspiration Hub?</h4>
+                    <p>The best way to support us is by sharing our content with others who might benefit, engaging with our articles, and following us on social media.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Response Info -->
+        <div class="content-card">
+            <h2>What to Expect When You Contact Us</h2>
+            <p>We're committed to providing excellent support and timely responses to all inquiries.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div style="text-align: center; padding: 1.5rem; background: rgba(248, 250, 252, 0.9); border-radius: 12px;">
+                    <div style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem;">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Quick Response</h4>
+                    <p>Most emails receive a response within 24 hours during business days.</p>
+                </div>
+                
+                <div style="text-align: center; padding: 1.5rem; background: rgba(248, 250, 252, 0.9); border-radius: 12px;">
+                    <div style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem;">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Personalized Replies</h4>
+                    <p>We read every message and provide thoughtful, personalized responses.</p>
+                </div>
+                
+                <div style="text-align: center; padding: 1.5rem; background: rgba(248, 250, 252, 0.9); border-radius: 12px;">
+                    <div style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Privacy Respected</h4>
+                    <p>Your contact information is kept confidential and never shared with third parties.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, rgba(248, 250, 252, 0.9) 0%, rgba(241, 245, 249, 0.9) 100%); border-radius: 12px; border-left: 4px solid var(--accent-color);">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Need Immediate Assistance?</h3>
+                <p>For urgent matters, please include "URGENT" in your message subject line. While we strive to respond quickly to all messages, urgent requests receive priority attention.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Daily Inspiration Hub</h3>
+                <p>Providing practical motivation, productivity strategies, and personal development tips since 2023. Empowering individuals to achieve their full potential.</p>
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="articles.html"><i class="fas fa-newspaper"></i> All Articles</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Popular Categories</h3>
+                <ul class="footer-links">
+                    <li><a href="articles.html#productivity"><i class="fas fa-rocket"></i> Productivity Tips</a></li>
+                    <li><a href="articles.html#mindset"><i class="fas fa-brain"></i> Mindset Development</a></li>
+                    <li><a href="articles.html#wellness"><i class="fas fa-heart"></i> Wellness & Health</a></li>
+                    <li><a href="articles.html#career"><i class="fas fa-briefcase"></i> Career Growth</a></li>
+                    <li><a href="articles.html#habits"><i class="fas fa-sun"></i> Morning Routines</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Information</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:contact@dailyinspirationhub.com"><i class="far fa-envelope"></i> contact@dailyinspirationhub.com</a></li>
+                    <li><a href="#"><i class="far fa-clock"></i> Mon-Fri: 9AM-6PM EST</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Based in the United States</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; <span id="currentYear"></span> Daily Inspiration Hub. All rights reserved. 
+            <div style="margin-top: 0.8rem; font-size: 0.85rem;">This website provides educational content for personal development and motivation.</div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileNav.classList.toggle('active');
+                mobileMenuBtn.innerHTML = mobileNav.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+        }
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successMessage = document.getElementById('successMessage');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                // Basic validation
+                if (!name || !email || !subject || !message) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                // Email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                
+                // Show loading state
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<div class="loading-spinner"></div> Sending...';
+                submitBtn.disabled = true;
+                
+                // Simulate API call (in a real implementation, this would be an actual API call)
+                setTimeout(() => {
+                    // Show success message
+                    successMessage.style.display = 'block';
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                    
+                    // Log the submission (in a real implementation, this would send data to a server)
+                    console.log('Contact form submitted:', { name, email, subject, message });
+                    
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                }, 1500);
+            });
+        }
+        
+        // Add scroll animation to content cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe content cards for animation
+        document.querySelectorAll('.content-card, .faq-item').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Form input focus effects
+        document.querySelectorAll('.form-control').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'translateY(-2px)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
